@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ariel Jiménez - 8-1043-1259">
+    <meta name="description" content="Página de reproducción de video deportivo estilo YouTube - Laboratorio de HTML5 y CSS3, Desarrollo Web.">
+    <title>GolPlay - Reproductor de video</title>
+
+    <!-- PARTE 2, Paso 1: integración EN LÍNEA (practicada y retirada)
+         <h1 style="color: red;">GolPlay</h1> -->
+
+    <!-- PARTE 2, Paso 2: integración INTERNA (practicada y retirada)
+         <style> h1 { color: blue; } </style> -->
+
+    <!-- PARTE 2, Paso 3: integración EXTERNA, la única que queda activa -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== ENCABEZADO ===== -->
+    <header id="cabecera">
+        <div class="marca">
+            <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+                <circle cx="15" cy="15" r="14" fill="#ffffff"></circle>
+                <polygon points="15,7 21,11 19,18 11,18 9,11" fill="#14532d"></polygon>
+            </svg>
+            <h1>GolPlay</h1>
+        </div>
+
+        <form class="buscador" action="#" method="get">
+            <label for="q" class="oculto">Buscar videos</label>
+            <input type="search" id="q" name="q" placeholder="Buscar partidos, goles, equipos...">
+            <input type="submit" class="btn" value="Buscar">
+        </form>
+    </header>
+
+    <!-- Barra de navegación en su propia franja -->
+    <nav class="navbar">
+        <a class="nav-link" href="#video-player">Inicio</a>
+        <a class="nav-link" href="#sugeridos">Suscripciones</a>
+        <a class="nav-link" href="#comentarios">Mi biblioteca</a>
+    </nav>
+
+    <!-- ===== CONTENIDO PRINCIPAL + PANEL LATERAL ===== -->
+    <div class="contenido">
+
+        <main>
+            <!-- Reproductor (elemento único -> id) -->
+            <section id="video-player">
+                <video controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231e7d32'/%3E%3Crect x='20' y='20' width='600' height='320' fill='none' stroke='%23ffffff' stroke-width='3'/%3E%3Ccircle cx='320' cy='180' r='58' fill='none' stroke='%23ffffff' stroke-width='3'/%3E%3Cline x1='320' y1='20' x2='320' y2='340' stroke='%23ffffff' stroke-width='3'/%3E%3Ccircle cx='320' cy='180' r='22' fill='%23ffffff'/%3E%3Cpolygon points='320,166 331,174 327,187 313,187 309,174' fill='%2314532d'/%3E%3C/svg%3E">
+                    <source src="https://assets.mixkit.co/videos/9660/9660-720.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video HTML5.
+                </video>
+
+                <h2>Resumen: final de la Copa Panamá 2026</h2>
+
+                <div class="marcador">
+                    <span class="equipo">Colón FC</span>
+                    <strong>2 - 1</strong>
+                    <span class="equipo">Chorrillo FC</span>
+                </div>
+
+                <p class="meta">84,320 vistas &bull; 14 de septiembre de 2026</p>
+
+                <div class="canal">
+                    <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+                        <circle cx="23" cy="23" r="23" fill="#14532d"></circle>
+                        <circle cx="23" cy="18" r="8" fill="#ffffff"></circle>
+                        <path d="M9 42a14 14 0 0 1 28 0z" fill="#ffffff"></path>
+                    </svg>
+                    <div class="canal-datos">
+                        <h3>Canal Fútbol Panamá</h3>
+                        <p>342 mil suscriptores</p>
+                    </div>
+                    <button type="button" class="btn">Suscribirse</button>
+                </div>
+
+                <p class="descripcion">
+                    Repaso completo de los 90 minutos de la final: las dos anotaciones del primer
+                    tiempo, el descuento sobre el final y las mejores atajadas del partido.
+                    Narración en español.
+                </p>
+            </section>
+
+            <!-- Sección de comentarios (elemento único -> id) -->
+            <section id="comentarios">
+                <h2>Comentarios</h2>
+
+                <form class="form-comentario" action="#" method="post">
+                    <label for="texto" class="oculto">Escribe un comentario</label>
+                    <textarea id="texto" name="texto" rows="3" placeholder="Escribe un comentario..."></textarea>
+                    <input type="submit" class="btn" value="Comentar">
+                </form>
+
+                <ul class="lista-comentarios">
+                    <li class="comentario">
+                        <strong>Carlos Mendoza</strong>
+                        <p>El segundo gol fue una jugada de pizarra, se nota el trabajo del cuerpo técnico.</p>
+                    </li>
+                    <li class="comentario">
+                        <strong>Daniela Ortega</strong>
+                        <p>La atajada del minuto 78 salvó el partido. ¡Qué reflejos!</p>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Panel de sugeridos (elemento único -> id) -->
+        <aside id="sugeridos">
+            <h2>Videos sugeridos</h2>
+
+            <article class="card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%231e7d32'/%3E%3Crect x='10' y='10' width='300' height='160' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Ccircle cx='160' cy='90' r='30' fill='%23ffffff'/%3E%3Cpolygon points='160,72 175,83 169,101 151,101 145,83' fill='%2314532d'/%3E%3C/svg%3E" alt="Miniatura del video Los 10 mejores goles de la temporada">
+                <div class="card-texto">
+                    <h3>Los 10 mejores goles de la temporada</h3>
+                    <p>Canal Fútbol Panamá &bull; 120 mil vistas</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%2314532d'/%3E%3Ccircle cx='160' cy='90' r='42' fill='none' stroke='%23f2c811' stroke-width='4'/%3E%3Ccircle cx='160' cy='90' r='16' fill='%23f2c811'/%3E%3Cline x1='40' y1='150' x2='280' y2='150' stroke='%23ffffff' stroke-width='3'/%3E%3C/svg%3E" alt="Miniatura del video Técnica: cómo pegarle de empeine">
+                <div class="card-texto">
+                    <h3>Técnica: cómo pegarle de empeine</h3>
+                    <p>Canal Fútbol Panamá &bull; 76 mil vistas</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%232f6b3a'/%3E%3Ccircle cx='90' cy='60' r='12' fill='%23ffffff'/%3E%3Ccircle cx='160' cy='110' r='12' fill='%23ffffff'/%3E%3Ccircle cx='230' cy='60' r='12' fill='%23ffffff'/%3E%3Cline x1='90' y1='60' x2='160' y2='110' stroke='%23f2c811' stroke-width='3'/%3E%3Cline x1='160' y1='110' x2='230' y2='60' stroke='%23f2c811' stroke-width='3'/%3E%3C/svg%3E" alt="Miniatura del video Análisis táctico: el 4-3-3">
+                <div class="card-texto">
+                    <h3>Análisis táctico: el 4-3-3</h3>
+                    <p>Canal Fútbol Panamá &bull; 54 mil vistas</p>
+                </div>
+            </article>
+        </aside>
+
+    </div>
+
+    <!-- ===== PIE DE PÁGINA ===== -->
+    <footer id="pie">
+        <p>GolPlay - Laboratorio 5 de Desarrollo Web</p>
+        <p>Ariel Jiménez - 8-1043-1259 | Universidad Tecnológica de Panamá</p>
+    </footer>
+
+    <script>
+        // Agrega el comentario escrito a la lista y lo conserva en el navegador
+        var f = document.querySelector('.form-comentario');
+        var lista = document.querySelector('.lista-comentarios');
+        var CLAVE = 'comentarios_golplay';
+
+        function pintar(t) {
+            if (typeof t !== 'string') { return; }
+            var li = document.createElement('li');
+            li.className = 'comentario';
+            var nombre = document.createElement('strong');
+            nombre.textContent = 'Ariel Jiménez';
+            var p = document.createElement('p');
+            p.textContent = t;
+            li.appendChild(nombre);
+            li.appendChild(p);
+            lista.appendChild(li);
+        }
+
+        try {
+            JSON.parse(localStorage.getItem(CLAVE) || '[]').forEach(pintar);
+        } catch (e) { /* almacenamiento no disponible */ }
+
+        f.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var t = document.getElementById('texto').value.trim();
+            if (!t) return;
+            pintar(t);
+            try {
+                var g = JSON.parse(localStorage.getItem(CLAVE) || '[]');
+                g.push(t);
+                localStorage.setItem(CLAVE, JSON.stringify(g));
+            } catch (e) { /* almacenamiento no disponible */ }
+            f.reset();
+        });
+    </script>
+
+</body>
+</html>
